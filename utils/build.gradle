@@ -1,6 +1,12 @@
 apply plugin: 'com.android.library'
 apply plugin: 'me.tatarka.retrolambda'
 
+ext {
+	PUBLISH_GROUP_ID = 'com.github.mjaremczuk'
+	PUBLISH_ARTIFACT_ID = 'common-utils'
+	PUBLISH_VERSION = '0.0.2'
+
+}
 android {
 	compileSdkVersion 24
 	buildToolsVersion "24.0.0"
@@ -30,3 +36,4 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 	compile 'com.android.support:appcompat-v7:24.0.0'
 }
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
