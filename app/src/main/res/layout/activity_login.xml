@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:descendantFocusability="beforeDescendants"
+		android:focusable="true"
+		android:focusableInTouchMode="true"
+		android:orientation="vertical"
+		tools:context="pl.revo.commonhelpers.LoginActivity">
+	<include layout="@layout/toolbar"/>
+	<ScrollView android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:background="@drawable/splash_bg"
+			android:fillViewport="false">
+	<LinearLayout android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:padding="20dp">
+		<android.support.design.widget.TextInputLayout android:layout_height="wrap_content"
+				android:layout_width="match_parent">
+			<android.support.design.widget.TextInputEditText android:id="@+id/register_login"
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:hint="login"
+					android:inputType="text"
+					android:lines="1"/>
+		</android.support.design.widget.TextInputLayout>
+		<android.support.design.widget.TextInputLayout android:layout_height="wrap_content"
+				android:layout_width="match_parent">
+			<android.support.design.widget.TextInputEditText android:id="@+id/register_password"
+					android:layout_height="wrap_content"
+					android:layout_width="match_parent"
+					android:hint="password"
+					android:inputType="textPassword"
+					android:lines="1"/>
+		</android.support.design.widget.TextInputLayout>
+
+		<Button android:id="@+id/login_login_button"
+				android:layout_height="38dp"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginTop="30dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:text="sign in"
+				android:textColor="@android:color/white"/>
+
+		<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:gravity="center_horizontal"
+				android:layout_marginTop="30dp"
+				android:text="Don`t have an account?"/>
+		<Button android:id="@+id/login_register_regular"
+				android:layout_height="38dp"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginTop="10dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:text="register for free"
+				android:textColor="@color/register_button"/>
+		<TextView android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:gravity="center_horizontal"
+				android:layout_marginTop="10dp"
+				android:layout_marginBottom="10dp"
+				android:text="or"/>
+		<Button android:id="@+id/login_register_google"
+				android:layout_height="38dp"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:paddingLeft="10dp"
+				android:drawablePadding="10dp"
+				android:paddingRight="10dp"
+				android:text="log in with google"
+				android:textColor="@color/register_button"/>
+		<Button android:id="@+id/login_register_facebook"
+				android:layout_height="38dp"
+				android:layout_marginTop="10dp"
+				android:layout_width="wrap_content"
+				android:layout_gravity="center_horizontal"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:text="log in with facebook"
+				android:textColor="@android:color/white"/>
+
+		<TextView
+				android:id="@+id/login_rules_label"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:gravity="center_horizontal"
+				android:layout_marginTop="10dp"
+				android:layout_gravity="center_horizontal"
+				android:layout_marginLeft="20dp"
+				android:layout_marginRight="20dp"
+				android:text="Korzystając z aplikacji akceptujesz jej regulamin"
+				android:textColor="@color/register_button"
+
+				android:textSize="14sp"/>
+	</LinearLayout>
+	</ScrollView>
+</LinearLayout>

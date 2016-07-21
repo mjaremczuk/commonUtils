@@ -9,4 +9,23 @@
 		<item name="colorAccent">@color/colorAccent</item>
 	</style>
 
+	<style name="radioStyle" parent="Material.Drawable.RadioButton">
+		<item name="android:layout_margin">10dp</item>
+		<item name="rbd_width">35dp</item>
+		<item name="rbd_height">35dp</item>
+		<item name="rbd_radius">15dp</item>
+		<item name="rbd_strokeSize">2dp</item>
+		<item name="rbd_innerRadius">10dp</item>
+	</style>
+	<style name="radioStyle.Blue">
+		<item name="rbd_strokeColor">#0000ff</item>
+	</style>
+
+	<style name="radioStyle.Yellow">
+		<item name="rbd_strokeColor">#ffff00</item>
+	</style>
+	<style name="radioStyle.Red">
+		<item name="rbd_strokeColor">#ff0000</item>
+	</style>
+
 </resources>
