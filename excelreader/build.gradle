@@ -1,0 +1,8 @@
+apply plugin: 'java'
+
+dependencies {
+	compile fileTree(include: ['*.jar'], dir: 'libs')
+	compile files('libs/jxl.jar')
+	compile 'com.opencsv:opencsv:3.6'
+	compile 'com.googlecode.json-simple:json-simple:1.1'
+}

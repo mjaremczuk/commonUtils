@@ -1,0 +1,348 @@
+app_name,Sunrise,
+exception_message_generic,Wystąpił błąd w aplikacji,
+exception_message_no_connection,Wystąpił błąd przy próbie połączenia z serwerem,
+exception_message_not_found,Cannot retrieve data. Check your internet connection,
+create_account,załóż konto,
+log_in_by_facebook,Zaloguj przez facebook,
+password,hasło,
+e_mail,e-mail,
+currently_played,OBECNIE GRANE,
+scene_1,Amfiteatr,
+scene_2,Parking,
+scene_1_,Amfiteatr:,
+scene_2_,Parking:,
+af_scene_1,After party,
+af_scene_2,HOSF,
+af_scene_1_,After party:,
+af_scene_2_,HOSF:,
+yours_photos,WASZE ZDJĘCIA,
+show_line_up,zobacz line-up,
+bottom_nav_sunrise,SUNRISE,
+bottom_nav_quiz,QUIZ,
+bottom_nav_photos,ZDJĘCIA,
+bottom_nav_line_up,LINE-UP,
+bottom_nav_map,MAPA,
+must_input_password,Musisz podać hasło,
+must_insert_e_mail,Musisz wprowadzić poprawny adres e-mail.,
+your_photos,Twoje zdjęcia,
+add_photo,Dodaj zdjęcie,
+info_festival,Informacje o festiwalu,
+web_page,Strona internetowa,
+facebook,Facebook,
+see_more,ZOBACZ WIĘCEJ,
+youtube,YouTube,
+sound_cloud,SoundCloud,
+instagram,Instagram,
+twitter,Twitter,
+show_aftermovie,Zobacz aftermovie,
+log_in_ticket,Zaloguj się do strefy uczestnika,
+artists,Wykonawcy,
+line_up,Line-Up,
+day_0,poniedziałek,
+day_1,wtorek,
+day_2,środa,
+day_3,czwartek,
+day_4,piątek,
+day_5,sobota,
+day_6,niedziela,
+meeting_with_friends,Zbiórka ze znajomymi,
+musical_quiz,Quiz muzyczny,
+quiz_points_plural_one,punkt,
+quiz_points_plural_zero,punktów,
+quiz_points_plural_two,punkty,
+quiz_points_plural_few,punktów,
+quiz_points_plural_other,punktów,
+login_required,Wymagane logowanie,
+login_required_description,"Aby zagrać w QUIZ, musisz zalogować się za pomocą konta na facebooku.",
+inactive_quiz_title,QUIZ jest nieaktywny,
+inactive_quiz_description,"Przepraszamy, obecnie gra jest niedostępna. Zajrzyj tu ponownie za jakiś czas.
+	",
+account_blocked_title,Blokada konta,
+account_blocked_description,Twoje konto w grze zostało zablokowane.,
+loading_game,Wczytywanie gry,
+send_photo,wyślij zdjęcie,
+choose_another_photo,wybierz inne zdjęcie,
+pick_photo_source,Wybierz galerię,
+my_friends,Moi znajomi,
+phone_contacts,Kontakty z telefonu,
+type_phone_number_hint,wpisz numer telefonu,
+time_ago_hours_zero,%d godzin temu,
+time_ago_hours_one,%d godzine temu,
+time_ago_hours_two,%d godziny temu,
+time_ago_hours_few,%d godziny temu,
+time_ago_hours_other,%d godzin temu,
+time_ago_minute_zero,%d minut temu,
+time_ago_minute_one,%d minuta temu,
+time_ago_minute_two,%d minuty temu,
+time_ago_minute_few,%d minuty temu,
+time_ago_minute_other,%d minut temu,
+time_ago_sec_zero,%d sekund temu,
+time_ago_sec_one,%d sekunda temu,
+time_ago_sec_two,%d sekundy temu,
+time_ago_sec_few,%d sekundy temu,
+time_ago_sec_other,%d sekund temu,
+persons_zero,%d osób,
+persons_one,%d osoba,
+persons_two,%d osoby,
+persons_few,%d osoby,
+persons_other,%d osób temu,
+you_must_choose_photo,Nie wybrałeś zdjęcia,
+party_date_from_to,22-24 lipiec 2016,
+party_days_to,Zostało jeszcze tylko %1$d dni!,
+distance_meters,%1$.0f m,
+distance_kmeters,%1$.1f km,
+ago_hours,%1$d godz,
+ago_minutes,%1$d min,
+ago_minutes_minus,%1$d min temu,
+ago_now,teraz,
+invited_persons,ZAPROSZONE OSOBY,
+meeting_owner,ORGANIZATOR,
+waiting,OCZEKUJE,
+founded_people,ZNALEZIONE OSOBY,
+contacts_from_phone_book,KONTAKTY Z TELEFONU,
+photos_waiting_for_acceptation,Zdjęcia oczekujące na akceptację,
+phone_number_cannot_be_empty,Musisz podać telefon,
+phone_number_must_be_9_digits,Telefon musi się składać z 9 cyfr,
+name_and_surname_cannot_be_empty,Musisz podać imię i nazwisko,
+name_and_surname,imię i nazwisko,
+organize_meeting,zorganizuj zbiórkę,
+friend_list_is_empty,List znajomych jest pusta,
+friend_list_is_empty_description,"Dodaj kontakty z książki adresowej
+telefonu lub wyszukaj znajomych
+po
+		numerze telefonu.
+	",
+add_from_phone_book,Dodaj z książki adresowej,
+add_phone_number,Dodaj nr telefonu,
+about_kolobrzeg_title,O Kołobrzegu,
+about_kolobrzeg_description,"Kołobrzeg jest pięknym miastem położonym w północno-zachodniej części Polski, u
+		ujścia rzeki Parsęty, nad Morzem Bałtyckim, otoczone liczną ilością nadmorskich lasów. Historia Kołobrzegu jako miasta
+		uzdrowiskowego sięga XIX wieku, bowiem w mieście i okolicach występują znaczne źródła wody mineralnej, solanki oraz
+		borowiny. Kołobrzeg dzisiaj to idealne miejsce na fantastyczny odpoczynek, oferujące bardzo rozbudowaną ofertę hotelarską
+		i gastronomiczną dla turystów. Zabytkowe Stare Miasto, Latarnia morska, piękny Port, nowoczesne Molo i słynny Amfiteatr,
+		dodają miastu dodatkowego uroku...
+	",
+about_kolobrzeg_link,"
+		<a href=http://www.kolobrzeg.pl/>WWW.KOŁOBRZEG.PL</a>
+	",
+about_festival_title,O festiwalu,
+about_festival_description,"SUNRISE FESTIVAL jest jednym z najpopularniejszym festiwali muzyki klubowej w Polsce
+		i Europie. Odbywa się co roku w Kołobrzegu na terenie Amfiteatru i jego rozległego parkingu, tuż obok plaży w dzielnicy
+		uzdrowiskowej. Festiwal, w ciągu trzech dni gromadzi ponad 90,000 uczestników na powierzchni 25,000 m2 i zamienia
+		Kołobrzeg w stolicę muzyki tanecznej.
+
+Występy wielkich gwiazd, oprawa multimedialna, pokaz pirotechniczny oraz
+		niesamowita jakość dzwięku, fundują uczestnikom niezapomniane wrażenia. Każdego roku na Sunrise można usłyszeć gwiazdy
+		największego formatu, których występy przenoszą uczestników festiwalu do innego wymiaru muzycznego. Festiwal trwa od
+		godziny 17:00 do godziny 04:00 w piątek, 04:30 w sobotę i 04:00 w niedzielę.
+
+Dotychczas na Sunrise Festival wystapili
+		m.in David Guetta, Tiesto, Armin van Buuren, Hardwell i wielu innych.
+	",
+about_festival_link,,
+journey,Dojazd,
+journey_title,Dojazd,
+accomodation,Nocleg,
+accomodation_title,Nocleg,
+safety,Bezpieczeństwo,
+safety_title,Bezpieczeństwo,
+useful_information,Przydatne informacje,
+useful_information_title,Przydatne informacje,
+car_title,Samochód,
+car_description,"<![CDATA[Do Kołobrzegu można dojechać różnymi środkami komunikacji. Jeśli na Sunrise Festival wybierasz się samochodem, najłatwiej dojechać do Kołobrzegu drogą krajową nr 11, która prowadzi z Bytomia do Kołobrzegu (przez Poznań). Kierowcy mogą również wybierać alternatywne drogi, takie jak droga krajowa numer 6 (Szczecin-Gdańsk) lub droga wojewódzka nr 163 w północnej części Polski w zachodniopomorskim, która łączy Wałcz z Kołobrzegiem.]]>",
+car_link,,
+train_title,Pociąg,
+train_description,"<![CDATA[Osobom, które wybierają się na Sunrise Festival pociągiem zalecamy wybierać przejazdy kolejowe liniami PKP Intercity lub PKP Intercity Premium. Do Kołobrzegu wspomnianymi liniami można dojechać bezpośrednio m.in z takich miast jak: Warszawa, Gdańsk, Poznań, Kraków czy Katowice. Więcej informacji na temat dokładnego rozkładu jazdy znajdziesz na:]]>",
+train_link,"
+		<a href=http://www.intercity.pl>www.intercity.pl</a>
+	",
+blablacar_title,Wspólne przejazdy,
+blablacar_description,"<![CDATA[Polecamy również skorzystać z oferty serwisu BlaBlaCar, gdzie każdego dnia zamieszczane są ogłoszenia wspólnych przejazdów do Kołobrzegu z każdej częsci Polski. Więcej informacji:]]>",
+blablacar_link,"
+		<a href=http://www.blablacar.pl>www.blablacar.pl</a>
+	",
+accomodation_description,"<![CDATA[Kołobrzeg ma do zaoferowania bardzo bogatą ofertę bazy noclegowej. W mieście znajduje się ponad 30 hoteli o wysokim standardzie świadczonych usług oraz kilkaset pensjonatów i kwater prywatnych. W celu sprawnego znalezienia miejsc noclegowych, polecamy skorzystać z ogólnodostępnych narzędzi takich jak]]>",
+accomodation_link,"
+		<a href=http://www.booking.com/Kolobrzeg-Hotele>www.booking.com</a>
+		|
+		<a href=http://www.trivago.pl>www.trivago.pl</a>
+	",
+accomodation_page_link,"http://www.booking.com/Kolobrzeg-Hotele | http://www.trivago.pl/kolobrzeg-114376
+	",
+safety_description,"<![CDATA[Nad bezpieczeństwem uczestników festiwalu czuwa Agencja Ochrony BOKSER z Poznania, która służy pomocą dla każdej osoby na Sunrise Festival.\n\nNamiot medyczny na festiwalu znajduje się zaraz przy głównym wejściu na teren imprezy. Obsługa medyczna dostępna jest przez cały czas trwania festiwalu dla każdego uczestnika. ]]>",
+safety_link,,
+useful_information_1_title,AMFITEATR,
+useful_information_1_description,"<![CDATA[Amfiteatr w Kołobrzegu znajduje się w części uzdrowiskowej przy ulicy Fredry 1 w Kołobrzegu, tuż obok hotelu Aquarius oraz LEDA.]]>",
+useful_information_1_link,,
+useful_information_2_title,ŻETONY,
+useful_information_2_description,"Na festiwalu obowiązuje płatność żetonami. Żetony można kupić tylko i
+		wyłącznie w kasach na terenie festiwalu. Zalecamy kupować żetony tylko z legalnego źródła.
+	",
+useful_information_2_link,,
+useful_information_3_title,STREFA SANITARNA,
+useful_information_3_description,"Na Festiwalu znajdują się wysokiej jakości strefy sanitarne TOI-TOI. Ich
+		lokalizację możesz znaleźć w programie imprezy, który otrzymasz na wejściu na teren festiwalu.
+	",
+useful_information_3_link,,
+useful_information_4_title,STREFA GASTRONOMICZNA,
+useful_information_4_description,"Na Festiwalu znajduje się kilkanaście punktów gastronomicznych, w których
+		zjesz ciepły posiłek oraz kupisz napoje chłodzące.
+	",
+useful_information_4_link,,
+useful_information_5_title,GODZINY OTWARCIA FESTIWALU,
+useful_information_5_description,"Festiwal trwa od godziny 17:00 do godziny 04:00 w piątek, 04:30 w sobotę i
+		04:00 w niedzielę.
+	",
+useful_information_5_link,,
+useful_information_6_title,CENTRUM INFORMACJI,
+useful_information_6_description,"Centrum Informacji znajduje się po lewej stronie od głównego wejścia. Godziny
+		otwarcia Centrum można sprawdzić w regulaminie imprezy Sunrise Festival 2016.
+	",
+useful_information_6_link,,
+useful_information_7_title,KASY BILETOWE,
+useful_information_7_description,"Kasy biletowe Sunrise Festival znajdują się w Centrum Informacji. Nie
+		gwarantujemy dostępności biletów na Sunrise Festival w kasach biletowych.
+	",
+useful_information_7_link,,
+about_kolobrzeg_page_link,http://www.kolobrzeg.pl/,
+train_page_link,http://www.intercity.pl,
+blablacar_page_link,https://www.blablacar.pl/,
+settings,Ustawienia,
+how_to_use_app,Jak korzystać z aplikacji,
+log_out,Wyloguj się,
+log_out_dialog_content,Czy na pewno chcesz się wylogować?,
+cancel,Anuluj,
+log_out_action,Wyloguj,
+how_to_use_app_title,Jak używać aplikacji,
+page_1_title,Logowanie biletem,
+page_1_desc,"Aby korzystać ze wszystkich funkcji aplikacji, musisz posiadać bilet na Sunrise 2016.
+
+Po
+		wprowadzeniu numeru swojego biletu dostaniesz możliwość tworzenia zbiórek ze swoimi znajomymi oraz dodawania zdjęć do
+		naszego albumu, który będzie widoczny dla wszystkich użytkowników aplikacji.
+	",
+page_2_title,Dodawanie znajomych,
+page_2_desc,"Ze znajomymi jest zawsze weselej!
+
+Aby dodać swoich znajomych, a także organizować zbiórki i być
+		do nich zapraszanym, musisz podać swój prawdziwy numer telefonu oraz pozwolić aplikacji na dostęp do Twojej książki
+		kontaktów zapisanych w telefonie.
+	",
+page_3_title,Zbiórki ze znajomymi,
+page_3_desc,"Po dodaniu znajomych biorących udział
+
+		w festiwalu, w łatwy sposób zorganizujesz spotkanie z nimi. Wystarczy że podasz godzinę, zaznaczysz miejsce na mapie i
+		wskażesz które osoby chcesz zaprosić.
+
+Wszyscy zaproszeni dostaną powiadomienie
+i informacje jak dotrzeć na umówione
+		miejsce.
+	",
+page_4_title,Album zdjęć,
+page_4_desc,"Pokaż wszystkim, jak się bawisz! Możesz łatwo dodać swoje zdjęcia z festiwalu, a także przeglądać
+		zdjęcia dodane przez innych. Zdjęcia z największą liczbą polubień trafią
+		na ekran główny aplikacji!
+
+Pamiętaj, że Twoje zdjęcie pojawi się dopiero po zaakceptowaniu przez administratora.
+	",
+page_5_title,QUIZ,
+page_5_desc,"Lubisz wyzwania? Od zawsze marzysz o udziale w muzycznym teleturnieju?
+
+Muzyczny QUIZ pozwoli Ci
+		sprawdzić jak dobrze znasz naszych wykonawców i ich utwory! Wczuj się w muzyczny klimat i zdobądź jak najwięcej punktów!
+	",
+new_meeting,Nowa zbiórka,
+meeting_name,nazwa spotkania,
+pick_meeting_hour,wybierz godzinę,
+create_meeting_info_label,"Twoja zbiórka będzie widoczna do
+ 15 min po podanej godzinie",
+tap_on_map_to_select_location,TAPNIJ NA MAPIE W MIEJSCE SPOTKANIA,
+ok,Ok,
+pick_date_title,Wybierz datę,
+ready,Gotowe,
+page_6_desc_1,"Oprócz wszystkich tych rzeczy, w aplikacji znajdziesz też oczywiście line-up, informacje o
+		artystach, mapę terenu festiwalu i praktyczne informacje.
+	",
+page_6_title,To nie wszystko,
+page_6_desc_2,"W dowolnej chwili możesz uruchomić instrukcję, wybierając ikonę koła zębatego w prawym górnym
+		rogu głównego ekranu, a następnie wybierając opcję „Jak korzystać z aplikacji”
+	",
+forward,Dalej,
+enter_to_app,Wejdź do aplikacji,
+invite_friends_to_meeting,ZAPROŚ OSOBY DO ZBIÓRKI,
+log_in,Zaloguj się,
+phone_number,Numer telefonu,
+refresh,ODŚWIEŻ,
+ticket_cant_be_empty,Pole nie może pozostać puste,
+sent_invitations,WYSŁANE ZAPROSZENIA,
+received_invitations,OTRZYMANE ZAPROSZENIA,
+my_friends_group_title,MOI ZNAJOMI,
+newest,Najnowsze,
+most_popular,Najpopularniejsze,
+my_friends_screen_title,Moi znajomi,
+remove_photo_alert_text,Czy na pewno chcesz usunąć zdjęcie?,
+delete,Usuń,
+next_life_in,Kolejne życie za ,
+exception_message_session_expired,Twoja sesja wygasła. Zaloguj się ponownie,
+failed_pick_photo_message,"Nie udało się dodać zdjęcia, spróbuj jeszcze raz",
+kamienny_szaniec,"Kamienny Szaniec, Kołobrzeg",
+amfiteatr,"Amfiteatr, Kołobrzeg",
+results_table,TABELA WYNIKÓW,
+friends_not_found,Nie odnaleziono znajomych,
+do_you_want_remove_friend,Czy na pewno chcesz usunąć %s ze znajomych?,
+you_are_accepting_terms,Korzystając z aplikacji akceptujesz jej regulamin.,
+about_account_description,"Jeśli masz już swój bilet na Sunrise
+2016, wpisz go poniżej aby w pełni
+korzystać z
+		funkcji aplikacji
+	",
+ticket_nr_optional,numer biletu (opcjonalny),
+enter_app,wejdź do aplikacji,
+type_ticket_nr_to_continue,Aby kontynuować wpisz numer biletu poniżej,
+type_ticket_nr,wpisz numer biletu,
+save,Zapisz,
+quiz_choose_correct_title,Wybierz właściwy tytuł:,
+cancel_quiz,przerwij quiz,
+quiz_start_game,zacznij grę!,
+table_score,tabela wyników,
+time_ended,Koniec czasu!,
+you_gained_points,Udało Ci się zdobyć:,
+back,Wróć,
+skip,Pomiń,
+add_ticket_row_title,Masz bilet na Sunrise?,
+meeting_my_friends_header,Moi znajomi,
+create_meeting,zorganizuj zbiórkę,
+my_meetings,MOJE ZBIÓRKI,
+no_meeting_title,Nie masz żadnych zbiórek,
+no_meetings_description,"Po dodaniu swoich znajomych do aplikacji
+możesz łatwo i wygodnie
+zorganizować
+		spotkanie z nimi!
+	",
+friends_add_phone_number,Dodaj nr telefonu,
+friends_add_from_address_book,Dodaj z książki adresowej,
+photo_album_empty_title,Twój album zdjęć jest pusty,
+photo_album_empty_description,"Pochwal się swoimi przeżyciami
+z innymi uczestnikami festiwalu!",
+welcome_in_sunrise_application,Witamy w aplikacji Sunrise,Willkommen in der Anwendung Sunrise
+account_creation,Tworzenie konta,Benutzerkonto anlegen
+loging_in,Logowanie,Einloggen
+pick_one_of_above_to_continue,"Wybierz jedną z poniższych\nopcji, aby kontynuować","Wählen Sie eine der nachstehenden Optionen, um fortzusetzen"
+your_email_and_password_for_account,Podaj swój adres e-mail oraz ustaw\nhasło do swojego konta Sunrise,Tragen Sie Ihre E-Mail-Adresse und das Passwort Ihres Sunrise-Benutzerkontos ein
+your_email_and_password_used_during_account_creation,Podaj swój adres e-mail oraz hasło\npodane przy zakładaniu konta,"Geben Sie Ihre E-Mail-Adresse und das Passwort an, das Sie beim Anlegen des Benutzerkontos eingetragen haben"
+welcome_log_in,zaloguj się,Loggen Sie sich ein
+welcome_create_account,załóż konto,Legen Sie das Benutzerkonto an
+meeting_name_cant_be_blank,Nazwa zbiórki nie może być pusta,Name des Treffens darf nicht leer bleiben
+meeting_date_cant_be_blank,Data i godzina zbiórki nie mogą być puste,Datum und Uhrzeit des Treffens dürfen nicht leer bleiben
+meeting_date_cant_be_from_future,Data i godzina zbiórki nie mogą być z przeszłości,Datum und Uhrzeit des Treffens dürfen nicht in der Vergangenheit sein
+meeting_place_must_be_set,Miejsce zbiórki musi być zaznaczone,Der Treffpunkt muss markiert werden
+meetigs_add_attendies_title,Dodaj osoby,Personen hinzufügen
+meeting_screen_title,Zbiórka,Treffen
+meeting_remove_meeting_content,Czy na pewno chcesz usunąć zbiórkę?,"Sind Sie sicher, dass Sie dieses Treffen löschen wollen?"
+meeting_remove_user_from_meeting_content,Czy na pewno chcesz usunąć użytkownika %s ze zbiórki?,"Sind Sie sicher, dass Sie Benutzer %s von dem Treffen löschen wollen?"
+meeting_minimum_two_persons_required_content,Zbiórka musi się składać z co najmniej 2 osób,Das Treffen muss aus mindestens 2 Personen bestehen
+terms_screen_title,Regulamin,Regelungen
+your_photos_report_photo_content,Czy na pewno chcesz zgłosić zdjęcie?,"Sind Sie sicher, dass Sie das Foto anmelden wollen?"
+quiz_podium,PODIUM,SIEGERPODEST
+quiz_other_results,POZOSTAŁE WYNIKI,SONSTIGE ERGEBNISSE
+create_meeting_no_friends_added,Nie dodałeś znajomych do zbiórki,Sie haben dem Treffen keine Freunde hinzugefügt

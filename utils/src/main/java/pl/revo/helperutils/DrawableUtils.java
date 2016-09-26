@@ -25,10 +25,10 @@ public class DrawableUtils {
 		return drawable;
 	}
 
-	public static Drawable generateShapeWithStroke(Orientation orientation,@ColorInt int bottomColor, @ColorInt int topColor, @ColorInt int colorStroke,
+	public static Drawable generateShapeWithStroke(Orientation orientation,@ColorInt int firstColor, @ColorInt int secondColor, @ColorInt int colorStroke,
 			int strokeSize,float cornerRadius) {
 		// values are require to be in pixels
-		GradientDrawable drawable = new GradientDrawable(orientation, new int[]{bottomColor, topColor});
+		GradientDrawable drawable = new GradientDrawable(orientation, new int[]{firstColor, secondColor});
 		drawable.setStroke(strokeSize, colorStroke);
 		drawable.setCornerRadius(cornerRadius);
 		return drawable;
