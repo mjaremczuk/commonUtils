@@ -12,6 +12,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import pl.emoji.EmojiManager;
 import pl.revo.commonhelpers.ItemFragment.OnListFragmentInteractionListener;
 import pl.revo.commonhelpers.dummy.DummyContent.DummyItem;
 import pl.revo.helperutils.DrawableUtils;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDataVie
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ButterKnife.bind(this);
-		SimpleEmojiManager.initialize(this);
+//		EmojiManager.initialize(this);
 		radioController = new RadioController(this);
 		presenter = new NavigationPresenter(this, getSupportFragmentManager(), R.id.fragment_container);
 		presenter.addFragmentToBackStack(new ItemFragment());
@@ -67,8 +68,8 @@ public class MainActivity extends AppCompatActivity implements NavigationDataVie
 		System.out.println();
 //		String text = EmojiParser.parseToAliases(editText.getText().toString());
 //		String unicode = EmojiParser.parseToUnicode(text);
-		String custom = SimpleEmojiManager.parseToUnicode(editText.getText().toString());
-		String toAliases = SimpleEmojiManager.parseToAliases(editText.getText().toString());
+		String custom = EmojiManager.parseToUnicode(editText.getText().toString());
+		String toAliases = EmojiManager.parseToAliases(editText.getText().toString());
 		Toast.makeText(this, toAliases + "\n" + custom, Toast.LENGTH_LONG).show();
 
 //		startActivity(new Intent(this,LoginActivity.class));

@@ -21,7 +21,7 @@ public class EmojiManager {
 
 	static {
 		try {
-			InputStream stream = EmojiManager.class.getClassLoader().getResourceAsStream("res/raw/emojis.json");
+			InputStream stream = EmojiManager.class.getClassLoader().getResourceAsStream("res/raw/emoji.json");
 			loadEmojis(stream);
 		}
 		catch (Exception exception) {
