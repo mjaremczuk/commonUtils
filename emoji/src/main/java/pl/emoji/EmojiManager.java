@@ -13,15 +13,30 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.json.JSONObject;
+import rx.Observable;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 public class EmojiManager {
-	private static final Pattern ALIAS_CANDIDATE_PATTERN =
-			Pattern.compile("(?<=:)\\+?(\\w|\\||\\-)+(?=:)");
+	private static final String EMOJI_PATH = "res/raw/emoji.json";
+	private static final Pattern ALIAS_CANDIDATE_PATTERN = Pattern.compile("(?<=:)\\+?(\\w|\\||\\-)+(?=:)");
+	private static final String EMOJI_FILE = "emoji.json";
 	static Map<String, String> EMOJIS = new HashMap<>();
 
+	/**
+	 * Static loading emojis will be called before initializing
+	 * so if somebody would like to deliver his own json file with emoticons in format:
+	 * @<code>
+	 *     {
+	 *      ":grinning_face:": "😀",
+	 *		":grinning_face_with_smiling_eyes:": "😁",
+	 *		...
+	 *     }
+	 * </code>
+	 */
 	static {
 		try {
-			InputStream stream = EmojiManager.class.getClassLoader().getResourceAsStream("res/raw/emoji.json");
+			InputStream stream = EmojiManager.class.getClassLoader().getResourceAsStream(EMOJI_PATH);
 			loadEmojis(stream);
 		}
 		catch (Exception exception) {
@@ -30,8 +45,12 @@ public class EmojiManager {
 	}
 
 	public static void initialize(Context context) {
+		initialize(context, EMOJI_FILE);
+	}
+
+	public static void initialize(Context context, String filename) {
 		try {
-			InputStream inputStream = context.getAssets().open("emoji.json");
+			InputStream inputStream = context.getAssets().open(filename);
 			loadEmojis(inputStream);
 		}
 		catch (Exception e) {
@@ -41,7 +60,6 @@ public class EmojiManager {
 
 	private static void loadEmojis(InputStream stream) throws Exception {
 		JSONObject emojiJSON = new JSONObject(inputStreamToString(stream));
-		Map<String, String> emojis = new HashMap<>();
 		Iterator<String> keyIter = emojiJSON.keys();
 		while (keyIter.hasNext()) {
 			String key = keyIter.next();
@@ -66,7 +84,7 @@ public class EmojiManager {
 		String result = string;
 		for (String candidate : candidates) {
 			String replacement = EMOJIS.get(candidate);
-			if(replacement != null) {
+			if (replacement != null) {
 				result = result.replace(candidate, replacement);
 			}
 		}
@@ -84,8 +102,20 @@ public class EmojiManager {
 		return result;
 	}
 
+	public static Observable<String> rxParseToAliases(String input) {
+		return Observable.just(parseToAliases(input))
+				.subscribeOn(Schedulers.computation())
+				.observeOn(AndroidSchedulers.mainThread());
+	}
+
+	public static Observable<String> rxParseToUnicode(String input) {
+		return Observable.just(parseToUnicode(input))
+				.subscribeOn(Schedulers.computation())
+				.observeOn(AndroidSchedulers.mainThread());
+	}
+
 	private static List<String> getAliasCandidates(String input) {
-		List<String> candidates = new ArrayList<>();
+		List<String> candidates = new ArrayList<>(1);
 		Matcher matcher = ALIAS_CANDIDATE_PATTERN.matcher(input);
 		matcher = matcher.useTransparentBounds(true);
 		while (matcher.find()) {
