@@ -66,7 +66,9 @@ public class EmojiManager {
 		String result = string;
 		for (String candidate : candidates) {
 			String replacement = EMOJIS.get(candidate);
-			result = result.replace(candidate, replacement);
+			if(replacement != null) {
+				result = result.replace(candidate, replacement);
+			}
 		}
 		return result;
 	}
