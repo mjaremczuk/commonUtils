@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements NavigationDataVie
 				.color(Color.YELLOW)
 				.secondColor(Color.BLUE)
 				.strokeColor(Color.BLACK)
-				.strokeWidth(2)
-				.cornerRadius(64)
+				.strokeWidth(0)
+				.cornerRadius(0)
 				.draw();
 
 

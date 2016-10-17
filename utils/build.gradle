@@ -5,7 +5,7 @@ apply plugin: 'com.neenbedankt.android-apt'
 ext {
 	PUBLISH_GROUP_ID = 'com.github.mjaremczuk'
 	PUBLISH_ARTIFACT_ID = 'common-utils'
-	PUBLISH_VERSION = '0.0.4'
+	PUBLISH_VERSION = '0.0.5'
 
 }
 android {

@@ -65,8 +65,8 @@ public class TintUtils {
 	 * @param color array of resource colors to apply
 	 * @param <T> view must extends View and implements interface
 	 */
-	private static <T extends View & TintableBackgroundView> void tint(T view, StateType states, @ColorInt int... color) {
-		view.setSupportBackgroundTintList(new ColorStateList(states.states, color));
+	private static <T extends View & TintableBackgroundView> void tint(T view, int[][] states, @ColorInt int... color) {
+		view.setSupportBackgroundTintList(new ColorStateList(states, color));
 	}
 
 	private static int[] toInts(Integer... integers) {
@@ -85,7 +85,7 @@ public class TintUtils {
 	 * @param color array of resource colors to apply
 	 * @param <T> view must extends view and implements interface
 	 */
-	private static <T extends View & TintableBackgroundView> void tintWithResColor(T view, StateType states,
+	private static <T extends View & TintableBackgroundView> void tintWithResColor(T view, int[][] states,
 			@ColorRes Integer... color) {
 		tint(view, states, resColorsToIntColor(view.getContext(), color));
 	}
@@ -100,11 +100,11 @@ public class TintUtils {
 	 *
 	 * @return return drawable with applied tint list
 	 */
-	private static Drawable tintDrawable(Drawable drawable, StateType states, @ColorInt int... colors) {
+	private static Drawable tintDrawable(Drawable drawable, int[][] states, @ColorInt int... colors) {
 		Drawable wrapDrawable = DrawableCompat.wrap(drawable);
 		// to apply only color overlay for drawable set tint mode to SRC_ATOP
 		DrawableCompat.setTintMode(wrapDrawable, Mode.SRC_ATOP);
-		DrawableCompat.setTintList(wrapDrawable, new ColorStateList(states.states, colors));
+		DrawableCompat.setTintList(wrapDrawable, new ColorStateList(states, colors));
 		return wrapDrawable;
 	}
 
@@ -118,7 +118,7 @@ public class TintUtils {
 	 *
 	 * @return drawable with tint applied
 	 */
-	private static Drawable tintDrawable(Context context, @DrawableRes int drawable, StateType states, @ColorInt int... colors) {
+	private static Drawable tintDrawable(Context context, @DrawableRes int drawable, int[][] states, @ColorInt int... colors) {
 		Drawable drawableObj = ActivityCompat.getDrawable(context, drawable);
 		return tintDrawable(drawableObj, states, colors);
 	}
@@ -134,7 +134,7 @@ public class TintUtils {
 	 *
 	 * @return drawable with tint applied
 	 */
-	private static Drawable tintDrawableWithResourceColor(Context context, @DrawableRes int drawable, StateType states,
+	private static Drawable tintDrawableWithResourceColor(Context context, @DrawableRes int drawable, int[][] states,
 			@ColorRes Integer... colors) {
 		return tintDrawable(context, drawable, states, resColorsToIntColor(context, colors));
 	}
@@ -149,7 +149,7 @@ public class TintUtils {
 	 *
 	 * @return tinted drawable
 	 */
-	private static Drawable tintDrawableWithResColor(Context context, Drawable drawable, StateType states,
+	private static Drawable tintDrawableWithResColor(Context context, Drawable drawable, int[][] states,
 			@ColorRes Integer... colors) {
 		return tintDrawable(drawable, states, resColorsToIntColor(context, colors));
 	}
@@ -181,7 +181,7 @@ public class TintUtils {
 	public static class Builder {
 
 		List<Integer> colorResList;
-		StateType type;
+		int[][] type;
 		boolean resourceColor;
 		Context context;
 
@@ -245,7 +245,7 @@ public class TintUtils {
 	public static class Steps implements ColorStep, TypeStep, ColorResStep, TintStep, InitialStep, InitialContextStep {
 
 		List<Integer> colorResList;
-		StateType type;
+		int[][] type;
 		boolean resourceColor;
 		Context context;
 
@@ -304,7 +304,7 @@ public class TintUtils {
 
 		@Override
 		public TypeStep withType(StateType type) {
-			this.type = type;
+			this.type = type.states;
 			return this;
 		}
 	}

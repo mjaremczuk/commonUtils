@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -61,6 +62,7 @@ public class EmojiManager {
 	private static void loadEmojis(InputStream stream) throws Exception {
 		JSONObject emojiJSON = new JSONObject(inputStreamToString(stream));
 		Iterator<String> keyIter = emojiJSON.keys();
+		EMOJIS.clear();
 		while (keyIter.hasNext()) {
 			String key = keyIter.next();
 			EMOJIS.put(key, (String) emojiJSON.get(key));
@@ -93,7 +95,10 @@ public class EmojiManager {
 
 	public static String parseToAliases(String input) {
 		String result = input;
-		for (String key : EMOJIS.keySet()) {
+		List<String> keySet = new ArrayList<>(EMOJIS.keySet());
+		Collections.reverse(keySet);
+//		for (String key : EMOJIS.keySet()) {
+		for (String key : keySet) {
 			String emoti = EMOJIS.get(key);
 			if (result.contains(emoti)) {
 				result = result.replace(emoti, key);
