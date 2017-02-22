@@ -4,10 +4,11 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.PowerManager;
-import rx.Observable.OnSubscribe;
-import rx.Subscriber;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
 
-public class MediaPlayerOnSubscribe implements OnSubscribe<MediaPlayerAccessWrapper> {
+
+public class MediaPlayerOnSubscribe implements ObservableOnSubscribe<MediaPlayerAccessWrapper> {
 
 	private final Context context;
 	private final String url;
@@ -17,19 +18,19 @@ public class MediaPlayerOnSubscribe implements OnSubscribe<MediaPlayerAccessWrap
 		this.context = context;
 		this.url = url;
 	}
-	@Override
-	public void call(Subscriber<? super MediaPlayerAccessWrapper> subscriber) {
 
+	@Override
+	public void subscribe(ObservableEmitter<MediaPlayerAccessWrapper> e) throws Exception {
 		mediaPlayer = new RadioAudioPlayer() {
 			@Override
 			public void onPrepared(MediaPlayer mp) {
 				super.onPrepared(mp);
-				subscriber.onNext(mediaPlayer);
+				e.onNext(mediaPlayer);
 			}
 
 			@Override
 			public boolean onError(MediaPlayer mp, int what, int extra) {
-				subscriber.onError(new MediaPlayerException(what, extra));
+				e.onError(new MediaPlayerException(what, extra));
 				return super.onError(mp, what, extra);
 			}
 		};

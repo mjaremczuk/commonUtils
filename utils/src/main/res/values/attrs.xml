@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<declare-styleable name="ShadowImageView">
-		<attr name="dropShadow" format="boolean"/>
-		<attr name="shadowColor" format="color"/>
-		<attr name="shadowRadius" format="dimension"/>
-		<attr name="shadowDx" format="dimension"/>
-		<attr name="shadowDy" format="dimension"/>
+		<attr format="boolean"
+				name="dropShadow"/>
+		<attr format="color"
+				name="shadowColor"/>
+		<attr format="dimension"
+				name="shadowRadius"/>
+		<attr format="dimension"
+				name="shadowDx"/>
+		<attr format="dimension"
+				name="shadowDy"/>
+	</declare-styleable>
+	<declare-styleable name="WavingView">
+		<attr format="dimension"
+				name="startSize"/>
+		<!--duration in miliseconds-->
+		<attr format="integer"
+				name="waveDuration"/>
+		<attr format="integer"
+				name="waveCount"/>
+		<attr format="reference"
+				name="centerImage"/>
+	</declare-styleable>
+
+	<declare-styleable name="CustomCard">
+		<attr format="reference"
+				name="cardBacgroundColor"/>
+		<attr format="dimension"
+				name="cardCornerRadius"/>
+		<attr format="dimension"
+				name="cardTopLeftCornerRadius"/>
+		<attr format="dimension"
+				name="cardTopRigthCornerRadius"/>
+		<attr format="dimension"
+				name="cardBottomLeftCornerRadius"/>
+		<attr format="dimension"
+				name="cardBottomRigthCornerRadius"/>
 	</declare-styleable>
 </resources>

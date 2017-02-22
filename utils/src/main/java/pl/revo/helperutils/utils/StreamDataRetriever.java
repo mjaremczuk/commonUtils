@@ -1,6 +1,10 @@
 package pl.revo.helperutils.utils;
 
 import android.util.Log;
+import io.reactivex.Observable;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -12,10 +16,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import pl.revo.helperutils.model.RadioStreamData;
-import rx.Observable;
-import rx.Observable.OnSubscribe;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+
 
 public class StreamDataRetriever {
 
@@ -23,7 +24,7 @@ public class StreamDataRetriever {
 
 	public Observable<String> fetchStreamData(String url) throws MalformedURLException {
 		URL radioURL = new URL(url);
-		return Observable.create((OnSubscribe<String>) subscriber -> {
+		return Observable.create((ObservableOnSubscribe<String>) subscriber -> {
 //			new Handler().postDelayed(() -> subscriber.onNext(getTrackDetails(radioURL)), 5000);
 			subscriber.onNext(getTrackDetails(radioURL));
 		}).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread());

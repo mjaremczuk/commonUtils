@@ -31,7 +31,7 @@ public class TintUtils {
 		 */
 		PRESSED_DEFAULT(STATE_PRESS_DEFAULT),
 		/**
-		 * States: DISABLED, PRESSED, DEFAULT
+		 * States: UNAVAILABLE, PRESSED, DEFAULT
 		 */
 		DPD(STATE_3),
 		/**
@@ -44,7 +44,7 @@ public class TintUtils {
 		 */
 		SPD(STATE_3_SELECTED);
 
-		int[][] states;
+		public int[][] states;
 
 		StateType(int[][] stateArray) {
 			this.states = stateArray;
@@ -307,6 +307,12 @@ public class TintUtils {
 			this.type = type.states;
 			return this;
 		}
+
+		@Override
+		public TypeStep withType(int[][] type) {
+			this.type = type;
+			return this;
+		}
 	}
 
 	public interface ColorStep {
@@ -342,6 +348,7 @@ public class TintUtils {
 
 	public interface InitialContextStep {
 		TypeStep withType(StateType type);
+		TypeStep withType(int[][] type);
 	}
 
 

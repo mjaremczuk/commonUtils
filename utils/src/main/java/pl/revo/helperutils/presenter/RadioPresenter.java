@@ -5,14 +5,15 @@ import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.os.Handler;
 import android.util.Log;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import java.net.MalformedURLException;
 import javax.inject.Inject;
 import pl.revo.helperutils.service.MediaPlayerAccessWrapper;
 import pl.revo.helperutils.service.MediaPlayerOnSubscribe;
 import pl.revo.helperutils.utils.StreamDataRetriever;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+
 
 public class RadioPresenter implements OnAudioFocusChangeListener {
 

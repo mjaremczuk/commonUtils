@@ -12,15 +12,19 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import pl.emoji.EmojiManager;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import pl.revo.commonhelpers.ItemFragment.OnListFragmentInteractionListener;
 import pl.revo.commonhelpers.dummy.DummyContent.DummyItem;
 import pl.revo.helperutils.DrawableUtils;
 import pl.revo.helperutils.RadioController;
 import pl.revo.helperutils.TintUtils;
 import pl.revo.helperutils.TintUtils.StateType;
+import pl.revo.helperutils.WavingView;
 import pl.revo.helperutils.presenter.NavigationDataView;
 import pl.revo.helperutils.presenter.NavigationPresenter;
+import pl.revo.helperutils.utils.RxCustom;
 
 public class MainActivity extends AppCompatActivity implements NavigationDataView, OnListFragmentInteractionListener {
 
@@ -30,14 +34,22 @@ public class MainActivity extends AppCompatActivity implements NavigationDataVie
 	RadioController radioController;
 	@BindView(R.id.edit_text)
 	EditText editText;
+	@BindView(R.id.waving_view)
+	WavingView wavingView;
+	@BindView(R.id.waving_view2)
+	WavingView wavingView2;
+
+	FirebaseRemoteConfig mFirebaseRemoteConfig;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ButterKnife.bind(this);
+//		StorageManager.init(this.getApplicationContext(),StorageType.EXTERNAL);
+		mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance();
 //		EmojiManager.initialize(this);
-		radioController = new RadioController(this);
+//		radioController = new RadioController(this);
 		presenter = new NavigationPresenter(this, getSupportFragmentManager(), R.id.fragment_container);
 		presenter.addFragmentToBackStack(new ItemFragment());
 //		Drawable drawable = DrawableUtils.generateShapeWithStroke(Color.BLUE,Color.RED, Color.BLACK, 2);
@@ -47,16 +59,26 @@ public class MainActivity extends AppCompatActivity implements NavigationDataVie
 				.secondColor(Color.BLUE)
 				.strokeColor(Color.BLACK)
 				.strokeWidth(0)
-				.cornerRadius(0)
+				.cornerRadius(40)
 				.draw();
-
-
 		example1.setBackground(
 				TintUtils.builder(this)
-						.withType(StateType.PRESSED_DEFAULT)
+						.withType(StateType.PRESSED_DEFAULT.states)
 						.withColor(Color.argb(125, 0, 255, 0))
 						.withColor(Color.TRANSPARENT)
 						.tint(drawable));
+		RxCustom.prepare(this).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+				.subscribe(o -> Toast.makeText(this, "Returned; " + o, Toast.LENGTH_SHORT).show());
+//		File file = getStorage().createFile("MyFile123.txt","asdkadjahsdk ");
+//		File file2 = getStorage().createFile("test/test","MyFile123.txt","asdkadjahsdk ");
+//		 getStorage().createFile("test/test","MyFile1234.txt","asdkadjahsdk ");
+//		getStorage().createFile("test/test","MyFile12345.txt","asdkadjahsdk ");
+//		getStorage().createFile("test/test","MyFile1236.txt","asdkadjahsdk ");
+//		getStorage().createFolder("nowy/folder/do/testow");
+//		List<File> files = StorageManager.getStorage().getFolderFiles("test/test");
+//		Log.d("FILE", "onCreate: "+ files.size());
+//		Log.d("Test", "onCreate: +"+obj.toString());
+
 	}
 
 	@OnClick(R.id.example_1)
@@ -68,9 +90,17 @@ public class MainActivity extends AppCompatActivity implements NavigationDataVie
 		System.out.println();
 //		String text = EmojiParser.parseToAliases(editText.getText().toString());
 //		String unicode = EmojiParser.parseToUnicode(text);
-		String custom = EmojiManager.parseToUnicode(editText.getText().toString());
-		String toAliases = EmojiManager.parseToAliases(editText.getText().toString());
-		Toast.makeText(this, toAliases + "\n" + custom, Toast.LENGTH_LONG).show();
+//		String custom = EmojiManager.parseToUnicode(editText.getText().toString());
+//		String toAliases = EmojiManager.parseToAliases(editText.getText().toString());
+//		Toast.makeText(this, toAliases + "\n" + custom, Toast.LENGTH_LONG).show();
+		if (wavingView.isRunning()) {
+			wavingView.stopWaving();
+			wavingView2.stopWaving();
+		}
+		else {
+			wavingView.startWaving();
+			wavingView2.startWaving();
+		}
 
 //		startActivity(new Intent(this,LoginActivity.class));
 	}
