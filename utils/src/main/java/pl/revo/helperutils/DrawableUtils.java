@@ -1,9 +1,12 @@
 package pl.revo.helperutils;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.GradientDrawable.Orientation;
 import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.v4.content.ContextCompat;
 import pl.revo.helperutils.DrawableUtils.Builder.OrientationStep;
 import pl.revo.helperutils.DrawableUtils.Builder.StepBuilder;
 
@@ -25,8 +28,9 @@ public class DrawableUtils {
 		return drawable;
 	}
 
-	public static Drawable generateShapeWithStroke(Orientation orientation,@ColorInt int firstColor, @ColorInt int secondColor, @ColorInt int colorStroke,
-			int strokeSize,float cornerRadius) {
+	public static Drawable generateShapeWithStroke(Orientation orientation, @ColorInt int firstColor, @ColorInt int secondColor,
+			@ColorInt int colorStroke,
+			int strokeSize, float cornerRadius) {
 		// values are require to be in pixels
 		GradientDrawable drawable = new GradientDrawable(orientation, new int[]{firstColor, secondColor});
 		drawable.setStroke(strokeSize, colorStroke);
@@ -36,6 +40,10 @@ public class DrawableUtils {
 
 	public static OrientationStep builder() {
 		return new StepBuilder();
+	}
+
+	public static OrientationStep builder(Context context) {
+		return new StepBuilder(context);
 	}
 
 	public static class Builder {
@@ -50,22 +58,37 @@ public class DrawableUtils {
 		}
 
 		public Drawable draw() {
-			return generateShapeWithStroke(orientation,bgColorFirst,bgColorSecond,strokeColor,strokeWidth,cornerRadius);
+			return generateShapeWithStroke(orientation, bgColorFirst, bgColorSecond, strokeColor, strokeWidth, cornerRadius);
 		}
 
 
 		public static class StepBuilder
-				implements OrientationStep, ColorStep, StrokeStep, DrawStep, ColorTwoStep, StrokeColorStep,CornerRadiusStep {
+				implements OrientationStep, ColorStep, StrokeStep, DrawStep, ColorTwoStep, StrokeColorStep, CornerRadiusStep {
 
 			Orientation orientation;
 			int bgColorFirst, bgColorSecond;
 			int strokeColor;
 			int strokeWidth;
 			float cornerRadius;
+			Context context;
+
+			public StepBuilder(Context context) {
+				this.context = context;
+			}
+
+			public StepBuilder() {
+
+			}
 
 			@Override
 			public ColorTwoStep color(@ColorInt int color) {
 				this.bgColorFirst = color;
+				return this;
+			}
+
+			@Override
+			public ColorTwoStep colorRes(@ColorRes int color) {
+				this.bgColorFirst = ContextCompat.getColor(context, color);
 				return this;
 			}
 
@@ -84,6 +107,12 @@ public class DrawableUtils {
 			@Override
 			public StrokeColorStep secondColor(@ColorInt int color) {
 				this.bgColorSecond = color;
+				return this;
+			}
+
+			@Override
+			public StrokeColorStep secondColorRes(@ColorRes int color) {
+				this.bgColorSecond = ContextCompat.getColor(context, color);
 				return this;
 			}
 
@@ -119,6 +148,8 @@ public class DrawableUtils {
 
 		public interface ColorStep {
 
+			ColorTwoStep colorRes(@ColorRes int color);
+
 			ColorTwoStep color(@ColorInt int color);
 
 			CornerRadiusStep cornerRadius(float radius);
@@ -127,6 +158,8 @@ public class DrawableUtils {
 		}
 
 		public interface ColorTwoStep {
+
+			StrokeColorStep secondColorRes(@ColorRes int color);
 
 			StrokeColorStep secondColor(@ColorInt int color);
 

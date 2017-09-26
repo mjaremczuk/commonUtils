@@ -6,32 +6,27 @@ import android.graphics.drawable.GradientDrawable.Orientation;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
+import android.support.v7.widget.AppCompatButton;
 import android.widget.EditText;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 import pl.revo.commonhelpers.ItemFragment.OnListFragmentInteractionListener;
 import pl.revo.commonhelpers.dummy.DummyContent.DummyItem;
 import pl.revo.helperutils.DrawableUtils;
-import pl.revo.helperutils.RadioController;
 import pl.revo.helperutils.TintUtils;
 import pl.revo.helperutils.TintUtils.StateType;
 import pl.revo.helperutils.WavingView;
 import pl.revo.helperutils.presenter.NavigationDataView;
 import pl.revo.helperutils.presenter.NavigationPresenter;
-import pl.revo.helperutils.utils.RxCustom;
 
 public class MainActivity extends AppCompatActivity implements NavigationDataView, OnListFragmentInteractionListener {
 
 	NavigationPresenter presenter;
 	@BindView(R.id.example_1)
-	Button example1;
-	RadioController radioController;
+	AppCompatButton example1;
 	@BindView(R.id.edit_text)
 	EditText editText;
 	@BindView(R.id.waving_view)
@@ -67,8 +62,17 @@ public class MainActivity extends AppCompatActivity implements NavigationDataVie
 						.withColor(Color.argb(125, 0, 255, 0))
 						.withColor(Color.TRANSPARENT)
 						.tint(drawable));
-		RxCustom.prepare(this).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
-				.subscribe(o -> Toast.makeText(this, "Returned; " + o, Toast.LENGTH_SHORT).show());
+
+		TintUtils.builder(this)
+				.withType(StateType.DPD)
+				.withColor(Color.YELLOW)
+				.withColor(Color.WHITE)
+				.withColor(Color.BLUE)
+				.tint(example1);
+
+		
+//		RxCustom.prepare(this).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread())
+//				.subscribe(o -> Toast.makeText(this, "Returned; " + o, Toast.LENGTH_SHORT).show());
 //		File file = getStorage().createFile("MyFile123.txt","asdkadjahsdk ");
 //		File file2 = getStorage().createFile("test/test","MyFile123.txt","asdkadjahsdk ");
 //		 getStorage().createFile("test/test","MyFile1234.txt","asdkadjahsdk ");

@@ -348,6 +348,7 @@ public class TintUtils {
 
 	public interface InitialContextStep {
 		TypeStep withType(StateType type);
+
 		TypeStep withType(int[][] type);
 	}
 
